@@ -16,12 +16,13 @@ branches:
    - development
 before_script:
   - npm install -g @angular/cli
+  - ng lint
 
 script:
   - ng build --prod --base-href https://tianiefunie.github.io/bitcoin-order-app/
-  - ng lint
-  - npm audit fix
 
+after_success:
+  - npm audit fix
 
 
   
